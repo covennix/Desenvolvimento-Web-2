@@ -101,56 +101,124 @@ minhaFuncao();
 9.  **Symbol**: Um tipo de dado cujas instâncias são únicas e imutáveis. Símbolos são frequentemente usados como chaves de propriedade de objetos quando o objetivo é que a chave seja exclusiva.
 
 ㅤ
-# Objeto
+# Tipos primitivos
 
-No JavaScript, um objeto é uma estrutura de dados que permite armazenar e organizar dados de maneira mais complexa do que os tipos de dados simples, como números e strings. Um objeto é uma coleção de pares de chave-valor, onde cada chave (também conhecida como propriedade) está associada a um valor. Aqui está um exemplo básico de um objeto em JavaScript:
+Também conhecidos como tipos de dados primitivos, em programação são os tipos de dados básicos e fundamentais que são suportados diretamente pela linguagem de programação. Esses tipos de dados primitivos são valores simples, que não têm métodos ou propriedades próprios.
 
+1. **Booleano**: O tipo booleano representa um valor lógico verdadeiro ou falso. Em JavaScript, os valores booleanos são `true` ou `false`. Eles são comumente usados em expressões condicionais e operações lógicas.
+
+   
+   ```javascript
+   var estaChovendo = true;
+   var solBrilhando = false;
+   ```
+
+2. **Número**: O tipo número representa valores numéricos, seja inteiros ou de ponto flutuante. Em JavaScript, números podem ser representados diretamente ou usando notação científica. 
+
+   
+   ```javascript
+   var idade = 25;
+   var altura = 1.75;
+   ```
+
+3. **String (Corda)**: O tipo string representa uma sequência de caracteres, geralmente delimitada por aspas simples (`''`) ou aspas duplas (`""`). Strings são usadas para representar texto em JavaScript.
+
+   
+   ```javascript
+   var nome = 'Maria';
+   var mensagem = "Olá, mundo!";
+   ```
+
+4. **Indefinido (Undefined)**: O valor `undefined` é atribuído automaticamente a variáveis que foram declaradas mas não inicializadas. Também é o valor retornado por funções que não retornam explicitamente um valor.
+
+   
+   ```javascript
+   var x;
+   console.log(x); // Output: undefined
+   ```
+
+5. **Nulo (Null)**: O valor `null` é usado para representar a ausência intencional de qualquer valor ou objeto. É diferente de `undefined`, que geralmente indica uma variável não inicializada.
+
+   
+   ```javascript
+   var y = null;
+   ```
+
+# Exercícios
+
+
+**1. Variáveis:**
+
+
+Declare uma variável chamada `idade` e atribua a ela o valor correspondente à sua idade.
+
+**Resposta:**
 ```javascript
-var pessoa = {
-    nome: "João",
-    idade: 30,
-    cidade: "São Paulo"
-};
+var idade = 25;
 ```
 
-Neste exemplo, `pessoa` é um objeto com três propriedades: `nome`, `idade` e `cidade`, cada uma com seu próprio valor.
+**2. Tipos de Dados:**
 
-Para acessar as propriedades de um objeto, você pode usar a notação de ponto (`objeto.propriedade`) ou a notação de colchetes (`objeto['propriedade']`):
 
+Identifique o tipo de dado das seguintes variáveis:
+
+a) `var nome = "Ana";`
+
+b) `var numero = 10;`
+
+c) `var estaChovendo = true;`
+
+**Resposta:**
+a) `String`
+b) `Number`
+c) `Boolean`
+
+**3. Declaração de Variáveis:**
+
+
+Declare e inicialize uma variável para armazenar o seu país de origem.
+
+**Resposta:**
 ```javascript
-console.log(pessoa.nome); // Output: João
-console.log(pessoa['idade']); // Output: 30
+var paisOrigem = "Brasil";
 ```
 
-Você também pode adicionar novas propriedades a um objeto ou modificar propriedades existentes:
+**4. Escopo (Global, Bloco, Função):**
 
+
+Determine se as seguintes variáveis têm escopo global, de bloco ou de função:
+
+a) `var nome = "João";`
+
+b) `let idade = 30;`
+
+c) 
 ```javascript
-pessoa.profissao = "Engenheiro";
-pessoa['idade'] = 31;
-
-console.log(pessoa.profissao); // Output: Engenheiro
-console.log(pessoa.idade); // Output: 31
+function minhaFuncao() {
+    var cidade = "São Paulo";
+}
 ```
 
-Além disso, as propriedades de um objeto podem conter valores de qualquer tipo de dados, incluindo outros objetos, funções e até mesmo arrays:
+**Resposta:**
+a) Escopo Global
+b) Escopo de Bloco
+c) Escopo de Função
 
-```javascript
-var carro = {
-    marca: "Toyota",
-    modelo: "Corolla",
-    ano: 2020,
-    proprietario: {
-        nome: "Maria",
-        idade: 25
-    },
-    verificarAno: function() {
-        return new Date().getFullYear() - this.ano;
-    }
-};
+**5. Tipos Primitivos:**
 
-console.log(carro.proprietario.nome); // Output: Maria
-console.log(carro.verificarAno()); // Output: 4 (supondo que o ano atual seja 2024)
-```
 
-Os objetos são uma parte fundamental da linguagem JavaScript e são amplamente utilizados para representar dados complexos e estruturas de programação. Eles oferecem uma maneira flexível e poderosa de organizar e manipular dados em JavaScript.
+Identifique os tipos primitivos das seguintes variáveis:
+
+a) `var salario = 2500;`
+
+b) `var endereco = null;`
+
+c) `var temperatura;`
+
+**Resposta:**
+a) `Number`
+b) `Null`
+c) `Undefined`
+
+
 
