@@ -216,7 +216,7 @@ b) `var endereco = null;`
 c) `var temperatura;`
 
 **Resposta:**
-a) `Number`
+a) `Number`y
 b) `Null`
 c) `Undefined`
 
