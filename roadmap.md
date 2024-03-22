@@ -216,9 +216,325 @@ b) `var endereco = null;`
 c) `var temperatura;`
 
 **Resposta:**
-a) `Number`y
+a) `Number`
 b) `Null`
 c) `Undefined`
+
+
+# Objeto
+
+Em JavaScript, um objeto é uma estrutura de dados que permite armazenar e organizar dados de maneira mais complexa do que os tipos de dados simples, como números e strings. Um objeto é uma coleção de pares de chave-valor, onde cada chave (também conhecida como propriedade) está associada a um valor.
+
+```javascript
+var pessoa = {
+    nome: "João",
+    idade: 30,
+    cidade: "São Paulo"
+};
+```
+
+Neste exemplo, `pessoa` é um objeto com três propriedades: `nome`, `idade` e `cidade`, cada uma com seu próprio valor.
+
+Para acessar as propriedades de um objeto, podemos usar a notação de ponto (`objeto.propriedade`) ou a notação de colchetes (`objeto['propriedade']`):
+
+```javascript
+console.log(pessoa.nome); // Output: João
+console.log(pessoa['idade']); // Output: 30
+```
+
+Também podemos adicionar novas propriedades a um objeto ou modificar propriedades existentes:
+
+```javascript
+pessoa.profissao = "Engenheiro";
+pessoa['idade'] = 31;
+
+console.log(pessoa.profissao); // Output: Engenheiro
+console.log(pessoa.idade); // Output: 31
+```
+
+As propriedades de um objeto podem conter valores de qualquer tipo de dados, incluindo outros objetos, funções e até mesmo arrays:
+
+```javascript
+var carro = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    ano: 2020,
+    proprietario: {
+        nome: "Maria",
+        idade: 25
+    },
+    verificarAno: function() {
+        return new Date().getFullYear() - this.ano;
+    }
+};
+
+console.log(carro.proprietario.nome); // Output: Maria
+console.log(carro.verificarAno()); // Output: 4 (supondo que o ano atual seja 2024)
+```
+
+# Array
+
+Um array é uma estrutura de dados que permite armazenar múltiplos valores em uma única variável. Os valores em um array podem ser de qualquer tipo de dados, incluindo números, strings, objetos, outros arrays e até mesmo funções. Um array é uma coleção ordenada de elementos, onde cada elemento é identificado por um índice numérico.
+
+### Criando Arrays:
+Existem várias maneiras de criar um array em JavaScript:
+
+1. **Notação Literal de Array**: Utilizando colchetes `[]` e inserindo os elementos separados por vírgulas.
+
+   ```javascript
+   var numeros = [1, 2, 3, 4, 5];
+   var nomes = ["Ana", "João", "Maria"];
+   ```
+
+2. **Constructor Array**: Utilizando o construtor `Array()` e passando os elementos como argumentos.
+
+   ```javascript
+   var frutas = new Array("Maçã", "Banana", "Laranja");
+   ```
+
+### Acessando Elementos:
+Os elementos de um array são acessados utilizando seus índices, que começam em 0 e vão até o comprimento do array menos 1.
+
+```javascript
+var frutas = ["Maçã", "Banana", "Laranja"];
+console.log(frutas[0]); // Output: Maçã
+console.log(frutas[1]); // Output: Banana
+console.log(frutas[2]); // Output: Laranja
+```
+
+### Propriedades e Métodos de Array:
+JavaScript fornece várias propriedades e métodos embutidos para manipular arrays:
+
+- `length`: Propriedade que retorna o número de elementos em um array.
+
+  ```javascript
+  var numeros = [1, 2, 3, 4, 5];
+  console.log(numeros.length); // Output: 5
+  ```
+
+- `push()`: Método que adiciona um ou mais elementos ao final de um array e retorna o novo comprimento do array.
+
+  ```javascript
+  var frutas = ["Maçã", "Banana"];
+  frutas.push("Laranja");
+  console.log(frutas); // Output: ["Maçã", "Banana", "Laranja"]
+  ```
+
+- `pop()`: Método que remove o último elemento de um array e retorna esse elemento.
+
+  ```javascript
+  var frutas = ["Maçã", "Banana", "Laranja"];
+  var ultimaFruta = frutas.pop();
+  console.log(ultimaFruta); // Output: Laranja
+  console.log(frutas); // Output: ["Maçã", "Banana"]
+  ```
+
+- `forEach()`: Método que executa uma função para cada elemento do array.
+
+  ```javascript
+  var numeros = [1, 2, 3, 4, 5];
+  numeros.forEach(function(numero) {
+      console.log(numero);
+  });
+  // Output:
+  // 1
+  // 2
+  // 3
+  // 4
+  // 5
+  ```
+
+# Operadores básicos
+
+### 1. Operadores Aritméticos:
+Operadores aritméticos são utilizados para realizar operações matemáticas básicas. Os principais operadores aritméticos em JavaScript são:
+
+- `+`: Adição
+- `-`: Subtração
+- `*`: Multiplicação
+- `/`: Divisão
+- `%`: Resto da divisão (módulo)
+- `++`: Incremento
+- `--`: Decremento
+
+
+```javascript
+var a = 10;
+var b = 5;
+console.log(a + b); // Output: 15
+console.log(a - b); // Output: 5
+console.log(a * b); // Output: 50
+console.log(a / b); // Output: 2
+console.log(a % b); // Output: 0
+console.log(++a);   // Output: 11
+console.log(--b);   // Output: 4
+```
+
+### 2. Operadores de Comparação:
+Operadores de comparação são utilizados para comparar valores e retornar um resultado booleano. Os principais operadores de comparação em JavaScript são:
+
+- `==`: Igual a
+- `!=`: Diferente de
+- `===`: Estritamente igual a (valor e tipo)
+- `!==`: Estritamente diferente de (valor e tipo)
+- `>`: Maior que
+- `<`: Menor que
+- `>=`: Maior ou igual a
+- `<=`: Menor ou igual a
+
+
+```javascript
+var x = 10;
+var y = 5;
+console.log(x == y);  // Output: false
+console.log(x != y);  // Output: true
+console.log(x === "10");  // Output: false
+console.log(x !== "10");  // Output: true
+console.log(x > y);   // Output: true
+console.log(x <= y);  // Output: false
+```
+
+### 3. Operadores Lógicos:
+Operadores lógicos são utilizados para realizar operações lógicas em valores booleanos. Os principais operadores lógicos em JavaScript são:
+
+- `&&`: E lógico (AND)
+- `||`: Ou lógico (OR)
+- `!`: Negação lógica (NOT)
+
+
+```javascript
+var a = true;
+var b = false;
+console.log(a && b);  // Output: false
+console.log(a || b);  // Output: true
+console.log(!a);      // Output: false
+```
+
+### 4. Operador typeof:
+O operador `typeof` é utilizado para retornar o tipo de dado de uma expressão ou variável. Os tipos de dados possíveis retornados pelo operador `typeof` são:
+
+- `"number"`: Número
+- `"string"`: String
+- `"boolean"`: Booleano
+- `"object"`: Objeto (exceto null)
+- `"function"`: Função
+- `"undefined"`: Indefinido
+
+
+```javascript
+var num = 10;
+var texto = "Olá";
+var condicao = true;
+var objeto = {};
+var funcao = function() {};
+var indefinido;
+console.log(typeof num);       // Output: number
+console.log(typeof texto);     // Output: string
+console.log(typeof condicao);  // Output: boolean
+console.log(typeof objeto);    // Output: object
+console.log(typeof funcao);    // Output: function
+console.log(typeof indefinido);// Output: undefined
+```
+
+# Exercícios
+
+- Crie um objeto chamado 'pessoa' com as propriedades 'nome', 'idade' e 'cidade'.
+Em seguida, imprima o nome e a idade da pessoa.
+
+```javascript
+var pessoa = {
+    nome: "Maria",
+    idade: 30,
+    cidade: "São Paulo"
+};
+
+console.log("Nome:", pessoa.nome);
+console.log("Idade:", pessoa.idade);
+```
+
+
+- Crie um array chamado 'cores' com as cores "vermelho", "azul" e "verde".
+Em seguida, imprima a segunda cor do array.
+```javascript
+var cores = ["vermelho", "azul", "verde"];
+
+console.log("Segunda cor:", cores[1]);
+```
+
+- Adicione a cor "amarelo" ao final do array 'cores' criado anteriormente.
+Em seguida, remova a primeira cor do array.
+
+```javascript
+cores.push("amarelo");
+cores.shift();
+
+console.log(cores);
+```
+
+### Exercícios sobre Operadores Básicos:
+
+**1. Aritméticos:**
+
+Declare duas variáveis 'a' e 'b' com os valores 10 e 5, respectivamente.
+Em seguida, imprima o resultado das operações de adição, subtração, multiplicação, divisão e módulo.
+
+```javascript
+var a = 10;
+var b = 5;
+
+console.log("Adição:", a + b);
+console.log("Subtração:", a - b);
+console.log("Multiplicação:", a * b);
+console.log("Divisão:", a / b);
+console.log("Módulo:", a % b);
+```
+
+**2. Comparação:**
+
+Declare duas variáveis 'x' e 'y' com os valores 10 e 5, respectivamente.
+Em seguida, imprima o resultado das operações de igualdade, diferença, maior que, menor que, maior ou igual a e menor ou igual.
+```javascript
+var x = 10;
+var y = 5;
+
+console.log("Igualdade:", x == y);
+console.log("Diferença:", x != y);
+console.log("Maior que:", x > y);
+console.log("Menor que:", x < y);
+console.log("Maior ou igual a:", x >= y);
+console.log("Menor ou igual a:", x <= y);
+```
+
+**3. Lógicos:**
+
+Declare duas variáveis booleanas 'p' e 'q' com os valores true e false, respectivamente.
+Em seguida, imprima o resultado das operações lógicas AND, OR e NOT.
+
+```javascript
+var p = true;
+var q = false;
+
+console.log("AND:", p && q);
+console.log("OR:", p || q);
+console.log("NOT:", !p);
+```
+
+**4. typeof:**
+
+Declare variáveis com diferentes tipos de dados (number, string, boolean, object, undefined) e imprima o tipo de cada uma.
+```javascript
+var num = 10;
+var texto = "Olá";
+var condicao = true;
+var objeto = {};
+var indefinido;
+
+console.log("Tipo de num:", typeof num);
+console.log("Tipo de texto:", typeof texto);
+console.log("Tipo de condicao:", typeof condicao);
+console.log("Tipo de objeto:", typeof objeto);
+console.log("Tipo de indefinido:", typeof indefinido);
+```
 
 
 
